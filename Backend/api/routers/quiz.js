@@ -988,7 +988,7 @@ router.post("/check", checkAuth, checkAuthUser,verifyURL, async (req, res, next)
 	});
 });
 
-router.delete("/delete", checkAuth, checkAuthAdmin,verifyURL, async (req, res, next) => {
+router.delete("/delete", checkAuth, checkAuthAdmin, async (req, res, next) => {
 	await Quiz.findById(req.body.quizId)
 		.then(async (result) => {
 			var numUsers = result.usersEnrolled.length;
