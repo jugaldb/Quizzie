@@ -62,28 +62,28 @@ router.post("/add", checkAuth, checkAuthAdmin,verifyURL, async (req, res, next) 
       }
       var flag = 0;
       console.log(req.verifyURL)
-      request(req.verifyURL, (err, response, body) => {
-        body = JSON.parse(body);
-        console.log(err)
-        console.log(body)
-        try{
-          if (!body.success || body.score < 0.4) {
-            flag = 1
-            return res.status(401).json({
-              message: "Something went wrong",
-            });
-          }
-          if(err){
-            return res.status(401).json({
-              message: err.toString(),
-            });
-          }
-        }catch(err){
-          return res.status(500).json({
-            error: err
-          })
-        }
-      });
+      // request(req.verifyURL, (err, response, body) => {
+      //   body = JSON.parse(body);
+      //   console.log(err)
+      //   console.log(body)
+      //   try{
+      //     if (!body.success || body.score < 0.4) {
+      //       flag = 1
+      //       return res.status(401).json({
+      //         message: "Something went wrong",
+      //       });
+      //     }
+      //     if(err){
+      //       return res.status(401).json({
+      //         message: err.toString(),
+      //       });
+      //     }
+      //   }catch(err){
+      //     return res.status(500).json({
+      //       error: err
+      //     })
+      //   }
+      // });
       console.log(flag)
 			new Question({
 				_id: new mongoose.Types.ObjectId(),
@@ -124,28 +124,28 @@ router.patch(
     }
     var flag = 0;
     console.log(req.verifyURL)
-    request(req.verifyURL, (err, response, body) => {
-      body = JSON.parse(body);
-      console.log(err)
-      console.log(body)
-      try{
-        if (!body.success || body.score < 0.4) {
-          flag = 1
-          return res.status(401).json({
-            message: "Something went wrong",
-          });
-        }
-        if(err){
-          return res.status(401).json({
-            message: err.toString(),
-          });
-        }
-      }catch(err){
-        return res.status(500).json({
-          error: err
-        })
-      }
-    });
+    // request(req.verifyURL, (err, response, body) => {
+    //   body = JSON.parse(body);
+    //   console.log(err)
+    //   console.log(body)
+    //   try{
+    //     if (!body.success || body.score < 0.4) {
+    //       flag = 1
+    //       return res.status(401).json({
+    //         message: "Something went wrong",
+    //       });
+    //     }
+    //     if(err){
+    //       return res.status(401).json({
+    //         message: err.toString(),
+    //       });
+    //     }
+    //   }catch(err){
+    //     return res.status(500).json({
+    //       error: err
+    //     })
+    //   }
+    // });
     console.log(flag)
 		const updateOps = {};
 		var flag = 0;
@@ -173,28 +173,28 @@ router.post("/csv", checkAuth, checkAuthAdmin,verifyURL, async (req, res, next) 
   }
   var flag = 0;
   console.log(req.verifyURL)
-	request(req.verifyURL, (err, response, body) => {
-    body = JSON.parse(body);
-    console.log(err)
-    console.log(body)
-    try{
-      if (!body.success || body.score < 0.4) {
-        flag = 1
-        return res.status(401).json({
-          message: "Something went wrong",
-        });
-      }
-      if(err){
-        return res.status(401).json({
-          message: err.toString(),
-        });
-      }
-    }catch(err){
-      return res.status(500).json({
-        error: err
-      })
-    }
-  });
+	// request(req.verifyURL, (err, response, body) => {
+  //   body = JSON.parse(body);
+  //   console.log(err)
+  //   console.log(body)
+  //   try{
+  //     if (!body.success || body.score < 0.4) {
+  //       flag = 1
+  //       return res.status(401).json({
+  //         message: "Something went wrong",
+  //       });
+  //     }
+  //     if(err){
+  //       return res.status(401).json({
+  //         message: err.toString(),
+  //       });
+  //     }
+  //   }catch(err){
+  //     return res.status(500).json({
+  //       error: err
+  //     })
+  //   }
+  // });
   console.log(flag)
 	const { questions } = req.body;
 	await Question.insertMany(questions)

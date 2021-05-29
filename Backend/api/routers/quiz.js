@@ -41,28 +41,28 @@ router.post(
     }
     var flag = 0;
     console.log(req.verifyURL)
-    request(req.verifyURL, (err, response, body) => {
-      body = JSON.parse(body);
-      console.log(err)
-      console.log(body)
-      try{
-        if (!body.success || body.score < 0.4) {
-          flag = 1
-          return res.status(401).json({
-            message: "Something went wrong",
-          });
-        }
-        if(err){
-          return res.status(401).json({
-            message: err.toString(),
-          });
-        }
-      }catch(err){
-        return res.status(500).json({
-          error: err
-        })
-      }
-    });
+    // request(req.verifyURL, (err, response, body) => {
+    //   body = JSON.parse(body);
+    //   console.log(err)
+    //   console.log(body)
+    //   try{
+    //     if (!body.success || body.score < 0.4) {
+    //       flag = 1
+    //       return res.status(401).json({
+    //         message: "Something went wrong",
+    //       });
+    //     }
+    //     if(err){
+    //       return res.status(401).json({
+    //         message: err.toString(),
+    //       });
+    //     }
+    //   }catch(err){
+    //     return res.status(500).json({
+    //       error: err
+    //     })
+    //   }
+    // });
     console.log(flag)
 		if (req.body.quizType.toLowerCase() == "private") {
 			const quiz = new Quiz({
@@ -165,28 +165,28 @@ router.patch("/enroll", checkAuth, checkAuthUser,verifyURL, async (req, res, nex
   }
   var flag = 0;
   console.log(req.verifyURL)
-	request(req.verifyURL, (err, response, body) => {
-    body = JSON.parse(body);
-    console.log(err)
-    console.log(body)
-    try{
-      if (!body.success || body.score < 0.4) {
-        flag = 1
-        return res.status(401).json({
-          message: "Something went wrong",
-        });
-      }
-      if(err){
-        return res.status(401).json({
-          message: err.toString(),
-        });
-      }
-    }catch(err){
-      return res.status(500).json({
-        error: err
-      })
-    }
-  });
+	// request(req.verifyURL, (err, response, body) => {
+  //   body = JSON.parse(body);
+  //   console.log(err)
+  //   console.log(body)
+  //   try{
+  //     if (!body.success || body.score < 0.4) {
+  //       flag = 1
+  //       return res.status(401).json({
+  //         message: "Something went wrong",
+  //       });
+  //     }
+  //     if(err){
+  //       return res.status(401).json({
+  //         message: err.toString(),
+  //       });
+  //     }
+  //   }catch(err){
+  //     return res.status(500).json({
+  //       error: err
+  //     })
+  //   }
+  // });
   console.log(flag)
 	Quiz.findById(req.body.quizId)
 		.exec()
@@ -247,28 +247,28 @@ router.patch(
     }
     var flag = 0;
     console.log(req.verifyURL)
-    request(req.verifyURL, (err, response, body) => {
-      body = JSON.parse(body);
-      console.log(err)
-      console.log(body)
-      try{
-        if (!body.success || body.score < 0.4) {
-          flag = 1
-          return res.status(401).json({
-            message: "Something went wrong",
-          });
-        }
-        if(err){
-          return res.status(401).json({
-            message: err.toString(),
-          });
-        }
-      }catch(err){
-        return res.status(500).json({
-          error: err
-        })
-      }
-    });
+    // request(req.verifyURL, (err, response, body) => {
+    //   body = JSON.parse(body);
+    //   console.log(err)
+    //   console.log(body)
+    //   try{
+    //     if (!body.success || body.score < 0.4) {
+    //       flag = 1
+    //       return res.status(401).json({
+    //         message: "Something went wrong",
+    //       });
+    //     }
+    //     if(err){
+    //       return res.status(401).json({
+    //         message: err.toString(),
+    //       });
+    //     }
+    //   }catch(err){
+    //     return res.status(500).json({
+    //       error: err
+    //     })
+    //   }
+    // });
     console.log(flag)
 		Quiz.findOne({ quizCode: req.body.quizCode })
 			.exec()
@@ -330,28 +330,28 @@ router.patch(
     }
     var flag = 0;
     console.log(req.verifyURL)
-    request(req.verifyURL, (err, response, body) => {
-      body = JSON.parse(body);
-      console.log(err)
-      console.log(body)
-      try{
-        if (!body.success || body.score < 0.4) {
-          flag = 1
-          return res.status(401).json({
-            message: "Something went wrong",
-          });
-        }
-        if(err){
-          return res.status(401).json({
-            message: err.toString(),
-          });
-        }
-      }catch(err){
-        return res.status(500).json({
-          error: err
-        })
-      }
-    });
+    // request(req.verifyURL, (err, response, body) => {
+    //   body = JSON.parse(body);
+    //   console.log(err)
+    //   console.log(body)
+    //   try{
+    //     if (!body.success || body.score < 0.4) {
+    //       flag = 1
+    //       return res.status(401).json({
+    //         message: "Something went wrong",
+    //       });
+    //     }
+    //     if(err){
+    //       return res.status(401).json({
+    //         message: err.toString(),
+    //       });
+    //     }
+    //   }catch(err){
+    //     return res.status(500).json({
+    //       error: err
+    //     })
+    //   }
+    // });
     console.log(flag)
 		await Quiz.findById(req.params.quizId)
 			.exec()
@@ -421,28 +421,28 @@ router.patch("/unenroll", checkAuth, checkAuthUser,verifyURL, async (req, res, n
   }
   var flag = 0;
   console.log(req.verifyURL)
-	request(req.verifyURL, (err, response, body) => {
-    body = JSON.parse(body);
-    console.log(err)
-    console.log(body)
-    try{
-      if (!body.success || body.score < 0.4) {
-        flag = 1
-        return res.status(401).json({
-          message: "Something went wrong",
-        });
-      }
-      if(err){
-        return res.status(401).json({
-          message: err.toString(),
-        });
-      }
-    }catch(err){
-      return res.status(500).json({
-        error: err
-      })
-    }
-  });
+	// request(req.verifyURL, (err, response, body) => {
+  //   body = JSON.parse(body);
+  //   console.log(err)
+  //   console.log(body)
+  //   try{
+  //     if (!body.success || body.score < 0.4) {
+  //       flag = 1
+  //       return res.status(401).json({
+  //         message: "Something went wrong",
+  //       });
+  //     }
+  //     if(err){
+  //       return res.status(401).json({
+  //         message: err.toString(),
+  //       });
+  //     }
+  //   }catch(err){
+  //     return res.status(500).json({
+  //       error: err
+  //     })
+  //   }
+  // });
   console.log(flag)
 	await User.findById(req.user.userId)
 		.then(async (result) => {
@@ -501,28 +501,28 @@ router.patch("/start", checkAuth, checkAuthUser,verifyURL, async (req, res, next
   }
   var flag = 0;
   console.log(req.verifyURL)
-	request(req.verifyURL, (err, response, body) => {
-    body = JSON.parse(body);
-    console.log(err)
-    console.log(body)
-    try{
-      if (!body.success || body.score < 0.4) {
-        flag = 1
-        return res.status(401).json({
-          message: "Something went wrong",
-        });
-      }
-      if(err){
-        return res.status(401).json({
-          message: err.toString(),
-        });
-      }
-    }catch(err){
-      return res.status(500).json({
-        error: err
-      })
-    }
-  });
+	// request(req.verifyURL, (err, response, body) => {
+  //   body = JSON.parse(body);
+  //   console.log(err)
+  //   console.log(body)
+  //   try{
+  //     if (!body.success || body.score < 0.4) {
+  //       flag = 1
+  //       return res.status(401).json({
+  //         message: "Something went wrong",
+  //       });
+  //     }
+  //     if(err){
+  //       return res.status(401).json({
+  //         message: err.toString(),
+  //       });
+  //     }
+  //   }catch(err){
+  //     return res.status(500).json({
+  //       error: err
+  //     })
+  //   }
+  // });
   console.log(flag)
 	await Quiz.findById(req.body.quizId)
 		.then(async (result0) => {
@@ -812,28 +812,28 @@ router.patch("/finish", checkAuth,verifyURL, async (req, res) => {
   }
   var flag = 0;
   console.log(req.verifyURL)
-	request(req.verifyURL, (err, response, body) => {
-    body = JSON.parse(body);
-    console.log(err)
-    console.log(body)
-    try{
-      if (!body.success || body.score < 0.4) {
-        flag = 1
-        return res.status(401).json({
-          message: "Something went wrong",
-        });
-      }
-      if(err){
-        return res.status(401).json({
-          message: err.toString(),
-        });
-      }
-    }catch(err){
-      return res.status(500).json({
-        error: err
-      })
-    }
-  });
+	// request(req.verifyURL, (err, response, body) => {
+  //   body = JSON.parse(body);
+  //   console.log(err)
+  //   console.log(body)
+  //   try{
+  //     if (!body.success || body.score < 0.4) {
+  //       flag = 1
+  //       return res.status(401).json({
+  //         message: "Something went wrong",
+  //       });
+  //     }
+  //     if(err){
+  //       return res.status(401).json({
+  //         message: err.toString(),
+  //       });
+  //     }
+  //   }catch(err){
+  //     return res.status(500).json({
+  //       error: err
+  //     })
+  //   }
+  // });
   console.log(flag)
 	await Quiz.updateOne({ _id: req.body.quizId }, { $set: { quizStatus: 2 } })
 		.then((result) => {
@@ -856,28 +856,28 @@ router.post("/check", checkAuth, checkAuthUser,verifyURL, async (req, res, next)
   }
   var flag = 0;
   console.log(req.verifyURL)
-	request(req.verifyURL, (err, response, body) => {
-    body = JSON.parse(body);
-    console.log(err)
-    console.log(body)
-    try{
-      if (!body.success || body.score < 0.4) {
-        flag = 1
-        return res.status(401).json({
-          message: "Something went wrong",
-        });
-      }
-      if(err){
-        return res.status(401).json({
-          message: err.toString(),
-        });
-      }
-    }catch(err){
-      return res.status(500).json({
-        error: err
-      })
-    }
-  });
+	// request(req.verifyURL, (err, response, body) => {
+  //   body = JSON.parse(body);
+  //   console.log(err)
+  //   console.log(body)
+  //   try{
+  //     if (!body.success || body.score < 0.4) {
+  //       flag = 1
+  //       return res.status(401).json({
+  //         message: "Something went wrong",
+  //       });
+  //     }
+  //     if(err){
+  //       return res.status(401).json({
+  //         message: err.toString(),
+  //       });
+  //     }
+  //   }catch(err){
+  //     return res.status(500).json({
+  //       error: err
+  //     })
+  //   }
+  // });
   console.log(flag)
 	const que_data = req.body.questions;
 	var quizId = req.body.quizId;
@@ -1044,28 +1044,28 @@ router.patch(
     }
     var flag = 0;
     console.log(req.verifyURL)
-    request(req.verifyURL, (err, response, body) => {
-      body = JSON.parse(body);
-      console.log(err)
-      console.log(body)
-      try{
-        if (!body.success || body.score < 0.4) {
-          flag = 1
-          return res.status(401).json({
-            message: "Something went wrong",
-          });
-        }
-        if(err){
-          return res.status(401).json({
-            message: err.toString(),
-          });
-        }
-      }catch(err){
-        return res.status(500).json({
-          error: err
-        })
-      }
-    });
+    // request(req.verifyURL, (err, response, body) => {
+    //   body = JSON.parse(body);
+    //   console.log(err)
+    //   console.log(body)
+    //   try{
+    //     if (!body.success || body.score < 0.4) {
+    //       flag = 1
+    //       return res.status(401).json({
+    //         message: "Something went wrong",
+    //       });
+    //     }
+    //     if(err){
+    //       return res.status(401).json({
+    //         message: err.toString(),
+    //       });
+    //     }
+    //   }catch(err){
+    //     return res.status(500).json({
+    //       error: err
+    //     })
+    //   }
+    // });
     console.log(flag)
 		await Quiz.updateOne(
 			{ _id: req.body.quizId },
@@ -1103,28 +1103,28 @@ router.patch("/restart", checkAuth, checkAuthAdmin,verifyURL, async (req, res, n
   }
   var flag = 0;
   console.log(req.verifyURL)
-	request(req.verifyURL, (err, response, body) => {
-    body = JSON.parse(body);
-    console.log(err)
-    console.log(body)
-    try{
-      if (!body.success || body.score < 0.4) {
-        flag = 1
-        return res.status(401).json({
-          message: "Something went wrong",
-        });
-      }
-      if(err){
-        return res.status(401).json({
-          message: err.toString(),
-        });
-      }
-    }catch(err){
-      return res.status(500).json({
-        error: err
-      })
-    }
-  });
+	// request(req.verifyURL, (err, response, body) => {
+  //   body = JSON.parse(body);
+  //   console.log(err)
+  //   console.log(body)
+  //   try{
+  //     if (!body.success || body.score < 0.4) {
+  //       flag = 1
+  //       return res.status(401).json({
+  //         message: "Something went wrong",
+  //       });
+  //     }
+  //     if(err){
+  //       return res.status(401).json({
+  //         message: err.toString(),
+  //       });
+  //     }
+  //   }catch(err){
+  //     return res.status(500).json({
+  //       error: err
+  //     })
+  //   }
+  // });
   console.log(flag)
 	const quiz = await Quiz.findById(req.body.quizId);
 	quiz.quizStatus = 1;
@@ -1151,28 +1151,28 @@ router.patch("/close", checkAuth, checkAuthAdmin,verifyURL, async (req, res, nex
   }
   var flag = 0;
   console.log(req.verifyURL)
-	request(req.verifyURL, (err, response, body) => {
-    body = JSON.parse(body);
-    console.log(err)
-    console.log(body)
-    try{
-      if (!body.success || body.score < 0.4) {
-        flag = 1
-        return res.status(401).json({
-          message: "Something went wrong",
-        });
-      }
-      if(err){
-        return res.status(401).json({
-          message: err.toString(),
-        });
-      }
-    }catch(err){
-      return res.status(500).json({
-        error: err
-      })
-    }
-  });
+	// request(req.verifyURL, (err, response, body) => {
+  //   body = JSON.parse(body);
+  //   console.log(err)
+  //   console.log(body)
+  //   try{
+  //     if (!body.success || body.score < 0.4) {
+  //       flag = 1
+  //       return res.status(401).json({
+  //         message: "Something went wrong",
+  //       });
+  //     }
+  //     if(err){
+  //       return res.status(401).json({
+  //         message: err.toString(),
+  //       });
+  //     }
+  //   }catch(err){
+  //     return res.status(500).json({
+  //       error: err
+  //     })
+  //   }
+  // });
   console.log(flag)
 	const quiz = await Quiz.findById(req.body.quizId);
 	quiz.quizStatus = 2;

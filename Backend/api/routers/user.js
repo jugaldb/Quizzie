@@ -31,28 +31,28 @@ router.post("/resendVerificationEmail",verifyURL, async (req, res, next) => {
   }
   var flag = 0;
   console.log(req.verifyURL);
-	request(req.verifyURL, (err, response, body) => {
-    body = JSON.parse(body);
-    console.log(err)
-    console.log(body)
-    try{
-      if (!body.success || body.score < 0.4) {
-        flag = 1
-        return res.status(401).json({
-          message: "Something went wrong",
-        });
-      }
-      if(err){
-        return res.status(401).json({
-          message: err.toString(),
-        });
-      }
-    }catch(err){
-      return res.status(500).json({
-        error: err
-      })
-    }
-  });
+	// request(req.verifyURL, (err, response, body) => {
+  //   body = JSON.parse(body);
+  //   console.log(err)
+  //   console.log(body)
+  //   try{
+  //     if (!body.success || body.score < 0.4) {
+  //       flag = 1
+  //       return res.status(401).json({
+  //         message: "Something went wrong",
+  //       });
+  //     }
+  //     if(err){
+  //       return res.status(401).json({
+  //         message: err.toString(),
+  //       });
+  //     }
+  //   }catch(err){
+  //     return res.status(500).json({
+  //       error: err
+  //     })
+  //   }
+  // });
   console.log(flag)
 	const user = await User.findOne({ email });
 	if (user) {
@@ -101,28 +101,28 @@ router.patch("/verifyEmail",verifyURL, async (req, res, next) => {
   }
   var flag = 0;
   console.log(req.verifyURL)
-	request(req.verifyURL, (err, response, body) => {
-    body = JSON.parse(body);
-    console.log(err)
-    console.log(body)
-    try{
-      if (!body.success || body.score < 0.4) {
-        flag = 1
-        return res.status(401).json({
-          message: "Something went wrong",
-        });
-      }
-      if(err){
-        return res.status(401).json({
-          message: err.toString(),
-        });
-      }
-    }catch(err){
-      return res.status(500).json({
-        error: err
-      })
-    }
-  });
+	// request(req.verifyURL, (err, response, body) => {
+  //   body = JSON.parse(body);
+  //   console.log(err)
+  //   console.log(body)
+  //   try{
+  //     if (!body.success || body.score < 0.4) {
+  //       flag = 1
+  //       return res.status(401).json({
+  //         message: "Something went wrong",
+  //       });
+  //     }
+  //     if(err){
+  //       return res.status(401).json({
+  //         message: err.toString(),
+  //       });
+  //     }
+  //   }catch(err){
+  //     return res.status(500).json({
+  //       error: err
+  //     })
+  //   }
+  // });
   console.log(flag)
 	const { verificationKey } = req.body;
 	await User.findOne({ verificationKey })
@@ -166,28 +166,28 @@ router.post("/signup",verifyURL, async (req, res, next) => {
   }
   var flag = 0;
   console.log(req.verifyURL);
-	request(req.verifyURL, (err, response, body) => {
-    body = JSON.parse(body);
-    console.log(err)
-    console.log(body)
-    try{
-      if (!body.success || body.score < 0.4) {
-        flag = 1
-        return res.status(401).json({
-          message: "Something went wrong",
-        });
-      }
-      if(err){
-        return res.status(401).json({
-          message: err.toString(),
-        });
-      }
-    }catch(err){
-      return res.status(500).json({
-        error: err
-      })
-    }
-  });
+	// request(req.verifyURL, (err, response, body) => {
+  //   body = JSON.parse(body);
+  //   console.log(err)
+  //   console.log(body)
+  //   try{
+  //     if (!body.success || body.score < 0.4) {
+  //       flag = 1
+  //       return res.status(401).json({
+  //         message: "Something went wrong",
+  //       });
+  //     }
+  //     if(err){
+  //       return res.status(401).json({
+  //         message: err.toString(),
+  //       });
+  //     }
+  //   }catch(err){
+  //     return res.status(500).json({
+  //       error: err
+  //     })
+  //   }
+  // });
   console.log(flag)
 	User.find({ email: req.body.email })
 		.exec()
@@ -282,28 +282,28 @@ router.post("/login",verifyURL, async (req, res, next) => {
 		});
   }
   var flag = 0;
-	request(req.verifyURL, (err, response, body) => {
-    body = JSON.parse(body);
-    console.log(err)
-    console.log(body)
-    try{
-      if (!body.success || body.score < 0.4) {
-        flag = 1
-        return res.status(401).json({
-          message: "Something went wrong",
-        });
-      }
-      if(err){
-        return res.status(401).json({
-          message: err.toString(),
-        });
-      }
-    }catch(err){
-      return res.status(500).json({
-        error: err
-      })
-    }
-  });
+	// request(req.verifyURL, (err, response, body) => {
+  //   body = JSON.parse(body);
+  //   console.log(err)
+  //   console.log(body)
+  //   try{
+  //     if (!body.success || body.score < 0.4) {
+  //       flag = 1
+  //       return res.status(401).json({
+  //         message: "Something went wrong",
+  //       });
+  //     }
+  //     if(err){
+  //       return res.status(401).json({
+  //         message: err.toString(),
+  //       });
+  //     }
+  //   }catch(err){
+  //     return res.status(500).json({
+  //       error: err
+  //     })
+  //   }
+  // });
   console.log(flag)
 	User.find({ email: req.body.email })
 		.exec()
@@ -452,28 +452,28 @@ router.patch("/updateProfile", checkAuth, checkAuthUser,verifyURL, (req, res, ne
   }
   var flag = 0;
   console.log(req.verifyURL);
-	request(req.verifyURL, (err, response, body) => {
-    body = JSON.parse(body);
-    console.log(err)
-    console.log(body)
-    try{
-      if (!body.success || body.score < 0.4) {
-        flag = 1
-        return res.status(401).json({
-          message: "Something went wrong",
-        });
-      }
-      if(err){
-        return res.status(401).json({
-          message: err.toString(),
-        });
-      }
-    }catch(err){
-      return res.status(500).json({
-        error: err
-      })
-    }
-  });
+	// request(req.verifyURL, (err, response, body) => {
+  //   body = JSON.parse(body);
+  //   console.log(err)
+  //   console.log(body)
+  //   try{
+  //     if (!body.success || body.score < 0.4) {
+  //       flag = 1
+  //       return res.status(401).json({
+  //         message: "Something went wrong",
+  //       });
+  //     }
+  //     if(err){
+  //       return res.status(401).json({
+  //         message: err.toString(),
+  //       });
+  //     }
+  //   }catch(err){
+  //     return res.status(500).json({
+  //       error: err
+  //     })
+  //   }
+  // });
   console.log(flag)
 	const id = req.user.userId;
 	const updateOps = {};
@@ -510,28 +510,28 @@ router.patch(
       });
     }
     var flag = 0;
-    request(req.verifyURL, (err, response, body) => {
-      body = JSON.parse(body);
-      console.log(err)
-      console.log(body)
-      try{
-        if (!body.success || body.score < 0.4) {
-          flag = 1
-          return res.status(401).json({
-            message: "Something went wrong",
-          });
-        }
-        if(err){
-          return res.status(401).json({
-            message: err.toString(),
-          });
-        }
-      }catch(err){
-        return res.status(500).json({
-          error: err
-        })
-      }
-    });
+    // request(req.verifyURL, (err, response, body) => {
+    //   body = JSON.parse(body);
+    //   console.log(err)
+    //   console.log(body)
+    //   try{
+    //     if (!body.success || body.score < 0.4) {
+    //       flag = 1
+    //       return res.status(401).json({
+    //         message: "Something went wrong",
+    //       });
+    //     }
+    //     if(err){
+    //       return res.status(401).json({
+    //         message: err.toString(),
+    //       });
+    //     }
+    //   }catch(err){
+    //     return res.status(500).json({
+    //       error: err
+    //     })
+    //   }
+    // });
     console.log(flag)
 		await User.findOne({ _id: req.user.userId })
 			.then(async (result) => {
@@ -586,28 +586,28 @@ router.post("/forgot",verifyURL,(req, res) => {
 		});
   }
   var flag = 0;
-	request(req.verifyURL, (err, response, body) => {
-    body = JSON.parse(body);
-    console.log(err)
-    console.log(body)
-    try{
-      if (!body.success || body.score < 0.4) {
-        flag = 1
-        return res.status(401).json({
-          message: "Something went wrong",
-        });
-      }
-      if(err){
-        return res.status(401).json({
-          message: err.toString(),
-        });
-      }
-    }catch(err){
-      return res.status(500).json({
-        error: err
-      })
-    }
-  });
+	// request(req.verifyURL, (err, response, body) => {
+  //   body = JSON.parse(body);
+  //   console.log(err)
+  //   console.log(body)
+  //   try{
+  //     if (!body.success || body.score < 0.4) {
+  //       flag = 1
+  //       return res.status(401).json({
+  //         message: "Something went wrong",
+  //       });
+  //     }
+  //     if(err){
+  //       return res.status(401).json({
+  //         message: err.toString(),
+  //       });
+  //     }
+  //   }catch(err){
+  //     return res.status(500).json({
+  //       error: err
+  //     })
+  //   }
+  // });
   console.log(flag)
 	var email = req.body.email;
 	User.findOne({ email: email }, (err, userData) => {
@@ -653,28 +653,28 @@ router.post("/resetpass",verifyURL, async (req, res) => {
 		});
   }
   var flag = 0;
-	request(req.verifyURL, (err, response, body) => {
-    body = JSON.parse(body);
-    console.log(err)
-    console.log(body)
-    try{
-      if (!body.success || body.score < 0.4) {
-        flag = 1
-        return res.status(401).json({
-          message: "Something went wrong",
-        });
-      }
-      if(err){
-        return res.status(401).json({
-          message: err.toString(),
-        });
-      }
-    }catch(err){
-      return res.status(500).json({
-        error: err
-      })
-    }
-  });
+	// request(req.verifyURL, (err, response, body) => {
+  //   body = JSON.parse(body);
+  //   console.log(err)
+  //   console.log(body)
+  //   try{
+  //     if (!body.success || body.score < 0.4) {
+  //       flag = 1
+  //       return res.status(401).json({
+  //         message: "Something went wrong",
+  //       });
+  //     }
+  //     if(err){
+  //       return res.status(401).json({
+  //         message: err.toString(),
+  //       });
+  //     }
+  //   }catch(err){
+  //     return res.status(500).json({
+  //       error: err
+  //     })
+  //   }
+  // });
   console.log(flag)
 	let resetKey = req.body.resetKey;
 	let newPassword = req.body.newPassword;

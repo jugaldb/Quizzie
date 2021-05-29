@@ -29,19 +29,19 @@ router.post("/signup",verifyURL, async (req, res, next) => {
 			message: "No recaptcha token",
 		});
 	}
-	request(req.verifyURL, (err, response, body) => {
-		body = JSON.parse(body);
-		if (!body.success || body.score < 0.4) {
-			return res.status(401).json({
-				message: "Something went wrong",
-			});
-		}
-    if(err){
-      return res.status(500).json({
-				message: "Google error",
-			});
-    }
-	});
+	// request(req.verifyURL, (err, response, body) => {
+	// 	body = JSON.parse(body);
+	// 	if (!body.success || body.score < 0.4) {
+	// 		return res.status(401).json({
+	// 			message: "Something went wrong",
+	// 		});
+	// 	}
+  //   if(err){
+  //     return res.status(500).json({
+	// 			message: "Google error",
+	// 		});
+  //   }
+	// });
 	Owner.find({ email: req.body.email })
 		.exec()
 		.then((user) => {
@@ -104,19 +104,19 @@ router.post("/login",verifyURL, async (req, res, next) => {
 			message: "No recaptcha token",
 		});
 	}
-	request(req.verifyURL, (err, response, body) => {
-		body = JSON.parse(body);
-		if (!body.success || body.score < 0.4) {
-			return res.status(401).json({
-				message: "Something went wrong",
-			});
-		}
-    if(err){
-      return res.status(500).json({
-				message: "Google error",
-			});
-    }
-	});
+	// request(req.verifyURL, (err, response, body) => {
+	// 	body = JSON.parse(body);
+	// 	if (!body.success || body.score < 0.4) {
+	// 		return res.status(401).json({
+	// 			message: "Something went wrong",
+	// 		});
+	// 	}
+  //   if(err){
+  //     return res.status(500).json({
+	// 			message: "Google error",
+	// 		});
+  //   }
+	// });
 	Owner.find({ email: req.body.email })
 		.exec()
 		.then((user) => {
@@ -376,19 +376,19 @@ router.patch(
 				message: "No recaptcha token",
 			});
 		}
-		request(req.verifyURL, (err, response, body) => {
-			body = JSON.parse(body);
-			if (!body.success || body.score < 0.4) {
-				res.status(401).json({
-					message: "Something went wrong",
-				});
-			}
-      if(err){
-        return res.status(500).json({
-          message: "Google error",
-        });
-      }
-		});
+		// request(req.verifyURL, (err, response, body) => {
+		// 	body = JSON.parse(body);
+		// 	if (!body.success || body.score < 0.4) {
+		// 		res.status(401).json({
+		// 			message: "Something went wrong",
+		// 		});
+		// 	}
+    //   if(err){
+    //     return res.status(500).json({
+    //       message: "Google error",
+    //     });
+    //   }
+		// });
 		await Owner.findOne({ _id: req.user.userId })
 			.then(async (result) => {
 				bcrypt.compare(req.body.password, result.password, (err, result1) => {

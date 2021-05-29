@@ -71,17 +71,17 @@ router.post("/verifyReCaptcha",verifyURL, async (req, res, next) => {
 			message: "No recaptcha token",
 		});
 	}
-	request(req.verifyURL, (err, response, body) => {
-		body = JSON.parse(body);
-		if (!body.success || body.score < 0.4) {
-			return res.status(401).json({
-				message: "Something went wrong",
-			});
-		}
-		res.status(200).json({
-			message: "Verified",
-		});
-	});
+	// request(req.verifyURL, (err, response, body) => {
+	// 	body = JSON.parse(body);
+	// 	if (!body.success || body.score < 0.4) {
+	// 		return res.status(401).json({
+	// 			message: "Something went wrong",
+	// 		});
+	// 	}
+	// 	res.status(200).json({
+	// 		message: "Verified",
+	// 	});
+	// });
 });
 
 module.exports = router;
