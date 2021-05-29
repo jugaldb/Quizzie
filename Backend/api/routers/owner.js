@@ -24,11 +24,11 @@ const router = express.Router();
 sgMail.setApiKey(process.env.SendgridAPIKey);
 
 router.post("/signup",verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-	}
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+	// }
 	// request(req.verifyURL, (err, response, body) => {
 	// 	body = JSON.parse(body);
 	// 	if (!body.success || body.score < 0.4) {
@@ -99,11 +99,11 @@ router.post("/signup",verifyURL, async (req, res, next) => {
 });
 
 router.post("/login",verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-	}
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+	// }
 	// request(req.verifyURL, (err, response, body) => {
 	// 	body = JSON.parse(body);
 	// 	if (!body.success || body.score < 0.4) {
@@ -371,11 +371,11 @@ router.patch(
 	checkAuth,
 	checkAuthOwner,verifyURL,
 	async (req, res, next) => {
-		if (!req.body.captcha) {
-			res.status(400).json({
-				message: "No recaptcha token",
-			});
-		}
+		// if (!req.body.captcha) {
+		// 	res.status(400).json({
+		// 		message: "No recaptcha token",
+		// 	});
+		// }
 		// request(req.verifyURL, (err, response, body) => {
 		// 	body = JSON.parse(body);
 		// 	if (!body.success || body.score < 0.4) {

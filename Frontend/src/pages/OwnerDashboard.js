@@ -40,7 +40,7 @@ function OwnerDashboard() {
 				} else {
 					setLoading(false);
 				}
-			}) 
+			});
 		} catch(error) {
 			console.log(error);
 		}

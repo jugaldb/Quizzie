@@ -23,11 +23,11 @@ const router = express.Router();
 sgMail.setApiKey(process.env.SendgridAPIKey);
 
 router.post("/resendVerificationEmail",verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.verifyURL)
 	// request(req.verifyURL, (err, response, body) => {
@@ -93,11 +93,11 @@ router.post("/resendVerificationEmail",verifyURL, async (req, res, next) => {
 });
 ///Verify email
 router.patch("/verifyEmail",verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.body.captcha)
   console.log(req.verifyURL)
@@ -159,11 +159,11 @@ router.patch("/verifyEmail",verifyURL, async (req, res, next) => {
 
 //signup
 router.post("/signup",verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.verifyURL)
 	// request(req.verifyURL, (err, response, body) => {
@@ -275,11 +275,11 @@ router.post("/signup",verifyURL, async (req, res, next) => {
 
 //login
 router.post("/login",verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.verifyURL)
 	// request(req.verifyURL, (err, response, body) => {
@@ -385,11 +385,11 @@ router.get("/", checkAuthAdmin, checkAuth, async (req, res, next) => {
 
 ////Update admin profile
 router.patch("/updateProfile", checkAuth, checkAuthAdmin,verifyURL, (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-	}
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+	// }
 	// request(req.verifyURL, (err, response, body) => {
 	// 	body = JSON.parse(body);
 	// 	if (!body.success || body.score < 0.4) {
@@ -646,11 +646,11 @@ router.post("/forgot",verifyURL, (req, res) => {
 });
 
 router.post("/resetpass",verifyURL, async (req, res) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.verifyURL)
 	// request(req.verifyURL, (err, response, body) => {

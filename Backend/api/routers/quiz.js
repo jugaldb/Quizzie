@@ -133,7 +133,7 @@ router.post(
 	}
 );
 
-///Get all quiz for student dashboard
+///Get all quiz for student/organiser dashboard
 router.get("/all", checkAuth, async (req, res, next) => {
 	Quiz.find({ quizType: "public" })
 		.populate("adminId")
@@ -158,11 +158,11 @@ router.get("/all", checkAuth, async (req, res, next) => {
 
 ///Enroll/get access to a quiz
 router.patch("/enroll", checkAuth, checkAuthUser,verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.verifyURL)
 	// request(req.verifyURL, (err, response, body) => {
@@ -414,11 +414,11 @@ router.get(
 );
 
 router.patch("/unenroll", checkAuth, checkAuthUser,verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.verifyURL)
 	// request(req.verifyURL, (err, response, body) => {
@@ -494,11 +494,11 @@ router.patch("/unenroll", checkAuth, checkAuthUser,verifyURL, async (req, res, n
 });
 
 router.patch("/start", checkAuth, checkAuthUser,verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.verifyURL)
 	// request(req.verifyURL, (err, response, body) => {
@@ -805,11 +805,11 @@ router.get("/:quizId", checkAuth, async (req, res, next) => {
 });
 
 router.patch("/finish", checkAuth,verifyURL, async (req, res) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.verifyURL)
 	// request(req.verifyURL, (err, response, body) => {
@@ -849,11 +849,11 @@ router.patch("/finish", checkAuth,verifyURL, async (req, res) => {
 });
 
 router.post("/check", checkAuth, checkAuthUser,verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.verifyURL)
 	// request(req.verifyURL, (err, response, body) => {
@@ -1096,11 +1096,11 @@ router.patch(
 );
 
 router.patch("/restart", checkAuth, checkAuthAdmin,verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.verifyURL)
 	// request(req.verifyURL, (err, response, body) => {
@@ -1144,11 +1144,11 @@ router.patch("/restart", checkAuth, checkAuthAdmin,verifyURL, async (req, res, n
 });
 
 router.patch("/close", checkAuth, checkAuthAdmin,verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.verifyURL)
 	// request(req.verifyURL, (err, response, body) => {

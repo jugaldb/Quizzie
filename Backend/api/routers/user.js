@@ -24,11 +24,11 @@ sgMail.setApiKey(process.env.SendgridAPIKey);
 ///Send Verification email
 router.post("/resendVerificationEmail",verifyURL, async (req, res, next) => {
 	const { email } = req.body;
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.verifyURL);
 	// request(req.verifyURL, (err, response, body) => {
@@ -94,11 +94,11 @@ router.post("/resendVerificationEmail",verifyURL, async (req, res, next) => {
 
 ///Verify email
 router.patch("/verifyEmail",verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.verifyURL)
 	// request(req.verifyURL, (err, response, body) => {
@@ -159,11 +159,11 @@ router.patch("/verifyEmail",verifyURL, async (req, res, next) => {
 
 ////Signup
 router.post("/signup",verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.verifyURL);
 	// request(req.verifyURL, (err, response, body) => {
@@ -276,11 +276,11 @@ router.post("/signup",verifyURL, async (req, res, next) => {
 
 ////Login
 router.post("/login",verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
 	// request(req.verifyURL, (err, response, body) => {
   //   body = JSON.parse(body);
@@ -445,11 +445,11 @@ router.get(
 
 //Update user profile
 router.patch("/updateProfile", checkAuth, checkAuthUser,verifyURL, (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
   console.log(req.verifyURL);
 	// request(req.verifyURL, (err, response, body) => {
@@ -580,11 +580,11 @@ router.patch(
 );
 
 router.post("/forgot",verifyURL,(req, res) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
 	// request(req.verifyURL, (err, response, body) => {
   //   body = JSON.parse(body);
@@ -647,11 +647,11 @@ router.post("/forgot",verifyURL,(req, res) => {
 });
 
 router.post("/resetpass",verifyURL, async (req, res) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-  }
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+  // }
   var flag = 0;
 	// request(req.verifyURL, (err, response, body) => {
   //   body = JSON.parse(body);

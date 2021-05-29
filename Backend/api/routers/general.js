@@ -66,11 +66,11 @@ router.get("/checkUser", checkAuth, async (req, res) => {
 });
 
 router.post("/verifyReCaptcha",verifyURL, async (req, res, next) => {
-	if (!req.body.captcha) {
-		return res.status(400).json({
-			message: "No recaptcha token",
-		});
-	}
+	// if (!req.body.captcha) {
+	// 	return res.status(400).json({
+	// 		message: "No recaptcha token",
+	// 	});
+	// }
 	// request(req.verifyURL, (err, response, body) => {
 	// 	body = JSON.parse(body);
 	// 	if (!body.success || body.score < 0.4) {

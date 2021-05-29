@@ -141,11 +141,11 @@ function Dashboard(props) {
 							onChange={handleTabChange}
 							indicatorColor="primary"
 							textColor="primary"
-							variant="fullWidth"
+							variant="fuldth"lWi
 							aria-label="full width tabs dashboard"
 						>
 							<Tab label="Quizzes" />
-							<Tab label={userType === "admin"? "Your Quizzes": "History"} />
+							<Tab label={userType === "admin" ? "Your Quizzes": "History"} />
 							<Tab label="Profile" />
 						</Tabs>
 					</AppBar>
