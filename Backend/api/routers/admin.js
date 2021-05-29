@@ -480,11 +480,11 @@ router.patch(
 	async (req, res, next) => {
 		await Admin.findOne({ _id: req.user.userId })
 			.then(async (result) => {
-        if (!req.body.captcha) {
-          return res.status(400).json({
-            message: "No recaptcha token",
-          });
-        }
+        // if (!req.body.captcha) {
+        //   return res.status(400).json({
+        //     message: "No recaptcha token",
+        //   });
+        // }
         var flag = 0;
         console.log(req.verifyURL)
         // request(req.verifyURL, (err, response, body) => {

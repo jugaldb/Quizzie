@@ -504,11 +504,11 @@ router.patch(
 	verifyURL,
 	checkAuthUser,
 	async (req, res, next) => {
-    if (!req.body.captcha) {
-      return res.status(400).json({
-        message: "No recaptcha token",
-      });
-    }
+    // if (!req.body.captcha) {
+    //   return res.status(400).json({
+    //     message: "No recaptcha token",
+    //   });
+    // }
     var flag = 0;
     // request(req.verifyURL, (err, response, body) => {
     //   body = JSON.parse(body);

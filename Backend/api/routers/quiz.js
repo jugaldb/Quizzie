@@ -34,11 +34,11 @@ router.post(
 	checkAuthAdmin,
 	verifyURL,
 	async (req, res, next) => {
-    if (!req.body.captcha) {
-      return res.status(400).json({
-        message: "No recaptcha token",
-      });
-    }
+    // if (!req.body.captcha) {
+    //   return res.status(400).json({
+    //     message: "No recaptcha token",
+    //   });
+    // }
     var flag = 0;
     console.log(req.verifyURL)
     // request(req.verifyURL, (err, response, body) => {
@@ -240,11 +240,11 @@ router.patch(
 	checkAuthUser,
 	verifyURL,
 	async (req, res, next) => {
-    if (!req.body.captcha) {
-      return res.status(400).json({
-        message: "No recaptcha token",
-      });
-    }
+    // if (!req.body.captcha) {
+    //   return res.status(400).json({
+    //     message: "No recaptcha token",
+    //   });
+    // }
     var flag = 0;
     console.log(req.verifyURL)
     // request(req.verifyURL, (err, response, body) => {
@@ -323,11 +323,11 @@ router.patch(
 	checkAuthAdmin,
 	verifyURL,
 	async (req, res, next) => {
-    if (!req.body.captcha) {
-      return res.status(400).json({
-        message: "No recaptcha token",
-      });
-    }
+    // if (!req.body.captcha) {
+    //   return res.status(400).json({
+    //     message: "No recaptcha token",
+    //   });
+    // }
     var flag = 0;
     console.log(req.verifyURL)
     // request(req.verifyURL, (err, response, body) => {
@@ -1037,11 +1037,11 @@ router.patch(
 	checkAuth,
 	checkAuthAdmin,verifyURL,
 	async (req, res, next) => {
-    if (!req.body.captcha) {
-      return res.status(400).json({
-        message: "No recaptcha token",
-      });
-    }
+    // if (!req.body.captcha) {
+    //   return res.status(400).json({
+    //     message: "No recaptcha token",
+    //   });
+    // }
     var flag = 0;
     console.log(req.verifyURL)
     // request(req.verifyURL, (err, response, body) => {
