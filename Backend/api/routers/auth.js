@@ -43,7 +43,7 @@ router.get(
 		var name = encodeURIComponent(req.user.name);
 		res.redirect(
 			303,
-			"https://se.jugaldb.com/?name=" + name + "&token=" + token
+			"https://iwp.jugaldb.com/?name=" + name + "&token=" + token
 		);
 		
 	}
