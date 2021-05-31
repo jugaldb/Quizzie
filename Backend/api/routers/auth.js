@@ -43,7 +43,7 @@ router.get(
 		var name = encodeURIComponent(req.user.name);
 		res.redirect(
 			303,
-			"https://quizzie-iwp-jugal.netlify.app/?name=" + name + "&token=" + token
+			"https://quizzie-iwp-winter.netlify.app/?name=" + name + "&token=" + token
 		);
 		
 	}
